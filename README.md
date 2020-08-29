@@ -2,7 +2,7 @@
 
 After implementing [REINFORCE](https://github.com/nima-siboni/simplest-world-REINFORCE) and [Actor-Crtitic](https://github.com/nima-siboni/cart-pole-deep-RL-actor-critic), it is finally time for Double DQN!
 
-## the problem
+## The problem
 
 The problem is to train an agent which stabilizes a pole on a cart (an inverted pendulum problem). This is a classic problem in dynamics and control theory and is used as a benchmark for testing control strategies [[1]](https://en.wikipedia.org/wiki/Inverted_pendulum#:~:text=An%20inverted%20pendulum%20is%20a,additional%20help%20will%20fall%20over).
 
@@ -18,7 +18,7 @@ The environment is cart-pole-v1 env. from OpenAI Gym. A deterministic environmen
 <img src="./performance-and-animations/animations/not-trained/animation.gif" width="60%">
 
 
-## the approach
+## The approach
 
 Here, the double-DQN method is used to stabilize the inverted pendulum.
 
@@ -31,8 +31,9 @@ Here, the DNNs are designed such that they accept a state-action pair and output
 <img src="./statics/Q_and_Qt.png" width="30%">
 
 
-## results
+## Results
 
+### In absence of random perturbations
 Let's first start with a visual demonstration of an episode of a trained agent, as shown here. One can qualitatively see the improvement of the agent in stabilizing the pole.
 
 <img src="./performance-and-animations/animations/trained/animation.gif" width="60%">
@@ -44,11 +45,7 @@ One can quantify the *performance* of the agent simply as the duration of the ti
 
 The maximum performance is limited to 200 steps as this is set by the cart-pole environment of OpenAI Gym as a limit.
 
-## discussions
-
-Using the actor-critic method, the agent can directly learn from their experience. As one can see in the above figure, after only ~10 policy iteration the agent figures out the right policy. One can stop the training at this point. Nevertheless, if one chooses to continue training, surprisingly the agent starts showing an unstable behavior, i.e. the performance oscillates. This is a known fact and in the following a few steps towards reduction of these oscillations are discussed. 
-
-## experimenting with wind!
+### In presence of random perturbations
 
 We also test the agent in presence of random perturbations. Here, we add "wind" which is blowing randomly and leads to a change the angle of the pole. An instance of such an experiment is presented here. One can observe that although the agent is trained in absence of the wind, it still performs reasonably well for in presence of the wind.
 
@@ -56,6 +53,7 @@ We also test the agent in presence of random perturbations. Here, we add "wind" 
 
 The windy experiments can be performed using ```simulator-windy.py```. The strength of the wind and its period can be changed by ```wind_power``` and ```wind_period``` variables in the script.
 
+## The code structure
 
 The main program is organized in the following way:
 * **initialization**: random weights/biases are assigned to the network, 
@@ -123,6 +121,12 @@ Of course, now one should choose a value for the epsilon in a proper range: on o
 <img src="./performance-and-animations/results_zero_epsilon.png" width="60%">
 
 Detailed quantitative and analytical studies of the effect of epsilon is required.
+
+
+## discussions
+
+Using the actor-critic method, the agent can directly learn from their experience. As one can see in the above figure, after only ~10 policy iteration the agent figures out the right policy. One can stop the training at this point. Nevertheless, if one chooses to continue training, surprisingly the agent starts showing an unstable behavior, i.e. the performance oscillates. This is a known fact and in the following a few steps towards reduction of these oscillations are discussed. 
+
 
 ## Future steps
 
