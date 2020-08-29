@@ -1,6 +1,6 @@
 # cart-pole-deep-RL-DDQN
 
-After implementing [REINFORCE](https://github.com/nima-siboni/simplest-world-REINFORCE) and [Actor-Crtitic](https://github.com/nima-siboni/cart-pole-deep-RL-actor-critic), it is finally time for Double DQN!
+After implementing [REINFORCE](https://github.com/nima-siboni/simplest-world-REINFORCE) and [Actor-Crtitic](https://github.com/nima-siboni/cart-pole-deep-RL-actor-critic), it is finally time for Double DQN (DDQN)! A great advantage of DDQN over the previously implementations of the actor-critic and the reinforce is that DDQN is off-policy, unlike those two which are on-policy.
 
 ## The problem
 
@@ -62,10 +62,15 @@ The windy experiments can be performed using ```simulator-windy.py```. The stren
 ## The code structure
 
 The main program is organized in the following way:
-* **initialization**: random weights/biases are assigned to the network, 
-* **experience loops**: 
+* **initialization**: creating the agent with random initial weights/biases. Setting up the environment.
 
-  **(1)** a random initial state is assigned to the *state* variable,
+* **filling up the replay buffer**: 
+
+  The simulation is run with the initial random policy for a number of episodes, and the events of all episodes are saved in the the replay buffer. Each *event* is 
+  
+  Each episode is simulated in the following manner:
+  
+  **(1)** a random initial state is assigned to the *state* variable,
 
   **(2)** given the *state*, an action (*a*) is chosen using the policy,
 
@@ -73,7 +78,7 @@ The main program is organized in the following way:
   
   **(4)** if the process is not ended, the new state is assigned to the variable *state* and the execution continues to step **(2)** . 
 
-All the states, actions, and the rewards are saved from the beginning of the episode until the end of it. This process is repeated for a number of episodes and all the data are gathered in an instance of the class *History*.
+This process is repeated for a number of episodes and all the data are gathered in an instance of the class *History*.
 
 * **learning** : After sampling based on the policy, the obtained data is used to train the DNN. In the case of our DNN, defining the loss function is not straightforward. The reason behind this complication is the fact that this DNN has two types of outputs (classification for the action and regression for the value function) which are both affected by the weight and biases of the *same* shared layers. To train the weights/biases of these shared layers one should combine the binary cross entropy loss for the actions, and the mean squared error for the value function. One way to combine these different losses would be to consider a (weighted) average of them. Using this loss and the data gathered from the experience, we used the actor-critic algorithm to take a policy iteration step. Using this new policy, we go back to the **experience loops**.
 
