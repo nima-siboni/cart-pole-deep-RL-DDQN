@@ -59,6 +59,34 @@ We also test the agent in presence of random perturbations. Here, we add "wind" 
 
 The windy experiments can be performed using ```simulator-windy.py```. The strength of the wind and its period can be changed by ```wind_power``` and ```wind_period``` variables in the script.
 
+
+## Requirements
+Besides the python3.6 and pip3
+
+* gym==0.17.2
+* keras
+* numpy
+* random2
+* tensorflow==2.2.0
+* sys-os (only for simulations)
+
+```
+pip3 install -r requirements.txt
+```
+## Usage
+
+To execute the experiment loops and the learning one can run:
+```
+python3 experience-and-learn.py
+```
+This script runs experiments for a random policy and improves it. 
+
+To use the simulator for sampling the not/trained agent, run
+
+```
+python3 simulator.py
+```
+
 ## The code structure
 
 The main program is organized in the following way:
@@ -102,36 +130,3 @@ from the [Deep RL course](http://rail.eecs.berkeley.edu/deeprlcourse/) by S. Lev
 
 On changing the policy (step 4): In our implementation, this is done by assiging the learned Q-network to the Q-target network, and then using the Q value predictions of this network with epsilon greedy as the exploring policy. This is not a unique choice and one has the freedom of choosing any policy. This freedom is due to the off-policy nature of the DQN (and also DDQN). Nevertheless it might be a good idea to somehow involve the learned information into the policy.
 
-## requirements
-Besides the python3 and pip3
-
-* gym 
-* keras
-* numpy
-* os
-* Pillow
-* random
-* tensorflow (version 2)
-
-```
-pip3 install -r requirements.txt
-```
-## usage
-
-To execute the experiment loops and the learning one can run:
-```
-python3 experience-and-learn.py
-```
-This script runs experiments for a random policy and improves it. 
-
-To use the simulator for sampling the not/trained agent, run
-
-```
-python3 simulator.py
-```
-
-To choose which agent is used one should change the file address of the model.
-
-<img src="https://latex.codecogs.com/gif.latex?\mathrm{output\_policy}=\frac{\mathrm{output\_policy}+\epsilon}{1+\epsilon~~\mathrm{nr\_actions}}" /> 
-
-where *output_policy* is the output of the DNN for the policy which has *nr_actions* elements (see the schematics of the DNN). This additional operation (with no learnable parameter) changes the design of the DNN as depicted below.
