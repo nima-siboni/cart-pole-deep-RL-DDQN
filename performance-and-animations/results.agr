@@ -1,0 +1,641 @@
+# Grace project file
+#
+@version 50125
+@page size 1024, 768
+@page scroll 5%
+@page inout 5%
+@link page off
+@map font 8 to "Courier", "Courier"
+@map font 10 to "Courier-Bold", "Courier-Bold"
+@map font 14 to "Courier-BoldItalic", "Courier-BoldItalic"
+@map font 11 to "Courier-BoldOblique", "Courier-BoldOblique"
+@map font 16 to "Courier-Italic", "Courier-Italic"
+@map font 9 to "Courier-Oblique", "Courier-Oblique"
+@map font 18 to "Courier-Regular", "Courier-Regular"
+@map font 19 to "D050000L-Regular", "D050000L-Regular"
+@map font 20 to "Dingbats-Regular", "Dingbats-Regular"
+@map font 4 to "Helvetica", "Helvetica"
+@map font 6 to "Helvetica-Bold", "Helvetica-Bold"
+@map font 7 to "Helvetica-BoldOblique", "Helvetica-BoldOblique"
+@map font 5 to "Helvetica-Oblique", "Helvetica-Oblique"
+@map font 25 to "NimbusMonoL-Bold", "NimbusMonoL-Bold"
+@map font 26 to "NimbusMonoL-BoldOblique", "NimbusMonoL-BoldOblique"
+@map font 27 to "NimbusMonoL-Regular", "NimbusMonoL-Regular"
+@map font 28 to "NimbusMonoL-RegularOblique", "NimbusMonoL-RegularOblique"
+@map font 29 to "NimbusMonoPS-Bold", "NimbusMonoPS-Bold"
+@map font 30 to "NimbusMonoPS-BoldItalic", "NimbusMonoPS-BoldItalic"
+@map font 31 to "NimbusMonoPS-Italic", "NimbusMonoPS-Italic"
+@map font 32 to "NimbusMonoPS-Regular", "NimbusMonoPS-Regular"
+@map font 33 to "NimbusRoman-Bold", "NimbusRoman-Bold"
+@map font 34 to "NimbusRoman-BoldItalic", "NimbusRoman-BoldItalic"
+@map font 35 to "NimbusRoman-Italic", "NimbusRoman-Italic"
+@map font 36 to "NimbusRoman-Regular", "NimbusRoman-Regular"
+@map font 37 to "NimbusRomanNo9L-Medium", "NimbusRomanNo9L-Medium"
+@map font 38 to "NimbusRomanNo9L-MediumItalic", "NimbusRomanNo9L-MediumItalic"
+@map font 39 to "NimbusRomanNo9L-Regular", "NimbusRomanNo9L-Regular"
+@map font 40 to "NimbusRomanNo9L-RegularItalic", "NimbusRomanNo9L-RegularItalic"
+@map font 41 to "NimbusSans-Bold", "NimbusSans-Bold"
+@map font 42 to "NimbusSans-BoldItalic", "NimbusSans-BoldItalic"
+@map font 43 to "NimbusSans-Italic", "NimbusSans-Italic"
+@map font 44 to "NimbusSans-Regular", "NimbusSans-Regular"
+@map font 45 to "NimbusSansL-Bold", "NimbusSansL-Bold"
+@map font 46 to "NimbusSansL-BoldCondensed", "NimbusSansL-BoldCondensed"
+@map font 47 to "NimbusSansL-BoldCondensedItalic", "NimbusSansL-BoldCondensedItalic"
+@map font 48 to "NimbusSansL-BoldItalic", "NimbusSansL-BoldItalic"
+@map font 49 to "NimbusSansL-Regular", "NimbusSansL-Regular"
+@map font 50 to "NimbusSansL-RegularCondensed", "NimbusSansL-RegularCondensed"
+@map font 51 to "NimbusSansL-RegularCondensedItalic", "NimbusSansL-RegularCondensedItalic"
+@map font 52 to "NimbusSansL-RegularItalic", "NimbusSansL-RegularItalic"
+@map font 53 to "NimbusSansNarrow-Bold", "NimbusSansNarrow-Bold"
+@map font 54 to "NimbusSansNarrow-BoldOblique", "NimbusSansNarrow-BoldOblique"
+@map font 55 to "NimbusSansNarrow-Oblique", "NimbusSansNarrow-Oblique"
+@map font 56 to "NimbusSansNarrow-Regular", "NimbusSansNarrow-Regular"
+@map font 57 to "P052-Bold", "P052-Bold"
+@map font 58 to "P052-BoldItalic", "P052-BoldItalic"
+@map font 59 to "P052-Italic", "P052-Italic"
+@map font 60 to "P052-Roman", "P052-Roman"
+@map font 61 to "StandardSymbolsL-Regular", "StandardSymbolsL-Regular"
+@map font 62 to "StandardSymbolsPS-Regular", "StandardSymbolsPS-Regular"
+@map font 12 to "Symbol", "Symbol"
+@map font 2 to "Times-Bold", "Times-Bold"
+@map font 3 to "Times-BoldItalic", "Times-BoldItalic"
+@map font 1 to "Times-Italic", "Times-Italic"
+@map font 0 to "Times-Roman", "Times-Roman"
+@map font 68 to "URWBookman-Demi", "URWBookman-Demi"
+@map font 69 to "URWBookman-DemiItalic", "URWBookman-DemiItalic"
+@map font 70 to "URWBookman-Light", "URWBookman-Light"
+@map font 71 to "URWBookman-LightItalic", "URWBookman-LightItalic"
+@map font 72 to "URWBookmanL-DemiBold", "URWBookmanL-DemiBold"
+@map font 73 to "URWBookmanL-DemiBoldItalic", "URWBookmanL-DemiBoldItalic"
+@map font 74 to "URWBookmanL-Light", "URWBookmanL-Light"
+@map font 75 to "URWBookmanL-LightItalic", "URWBookmanL-LightItalic"
+@map font 76 to "URWChanceryL-MediumItalic", "URWChanceryL-MediumItalic"
+@map font 77 to "URWGothic-Book", "URWGothic-Book"
+@map font 78 to "URWGothic-BookOblique", "URWGothic-BookOblique"
+@map font 79 to "URWGothic-Demi", "URWGothic-Demi"
+@map font 80 to "URWGothic-DemiOblique", "URWGothic-DemiOblique"
+@map font 81 to "URWGothicL-Book", "URWGothicL-Book"
+@map font 82 to "URWGothicL-BookOblique", "URWGothicL-BookOblique"
+@map font 83 to "URWGothicL-Demi", "URWGothicL-Demi"
+@map font 84 to "URWGothicL-DemiOblique", "URWGothicL-DemiOblique"
+@map font 85 to "URWPalladioL-Bold", "URWPalladioL-Bold"
+@map font 86 to "URWPalladioL-BoldItalic", "URWPalladioL-BoldItalic"
+@map font 87 to "URWPalladioL-Italic", "URWPalladioL-Italic"
+@map font 88 to "URWPalladioL-Roman", "URWPalladioL-Roman"
+@map font 89 to "Utopia-Bold", "Utopia-Bold"
+@map font 90 to "Utopia-BoldItalic", "Utopia-BoldItalic"
+@map font 91 to "Utopia-Italic", "Utopia-Italic"
+@map font 92 to "Utopia-Regular", "Utopia-Regular"
+@map font 93 to "Z003-MediumItalic", "Z003-MediumItalic"
+@map font 13 to "ZapfDingbats", "ZapfDingbats"
+@map color 0 to (255, 255, 255), "White"
+@map color 1 to (26, 16, 66), "Magma01"
+@map color 2 to (44, 17, 94), "Magma02"
+@map color 3 to (59, 15, 110), "Magma03"
+@map color 4 to (73, 16, 121), "Magma04"
+@map color 5 to (90, 21, 127), "Magma05"
+@map color 6 to (103, 26, 128), "Magma06"
+@map color 7 to (121, 34, 129), "Magma07"
+@map color 8 to (136, 40, 129), "Magma08"
+@map color 9 to (151, 43, 128), "Magma09"
+@map color 10 to (166, 50, 125), "Magma10"
+@map color 11 to (183, 53, 123), "Magma11"
+@map color 12 to (198, 61, 115), "Magma12"
+@map color 13 to (213, 67, 106), "Magma13"
+@map color 14 to (227, 78, 100), "Magma14"
+@map color 15 to (240, 91, 95), "Magma15"
+@map color 16 to (245, 105, 92), "Magma16"
+@map color 17 to (251, 123, 94), "Magma17"
+@map color 18 to (253, 144, 101), "Magma18"
+@map color 19 to (254, 162, 111), "Magma19"
+@map color 20 to (255, 178, 122), "Magma20"
+@map color 21 to (255, 170, 115), "Magma21"
+@map color 22 to (112, 128, 144), "slate Gray"
+@map color 23 to (105, 105, 105), "Dim Gray"
+@map color 24 to (128, 128, 128), "Gray"
+@map color 25 to (169, 169, 169), "Dark Gray"
+@map color 26 to (255, 0, 0), "Red"
+@map color 27 to (128, 0, 0), "Maroon"
+@map color 28 to (178, 34, 34), "Firebrick"
+@map color 29 to (220, 20, 60), "Crimson"
+@map color 30 to (205, 92, 92), "Indian Red"
+@map color 31 to (250, 128, 114), "Salmon"
+@map color 32 to (255, 99, 71), "Tomato"
+@map color 33 to (255, 69, 0), "Orange Red"
+@map color 34 to (0, 0, 255), "blue"
+@map color 35 to (0, 0, 128), "Navy"
+@map color 36 to (65, 105, 225), "Royal Blue"
+@map color 37 to (70, 130, 180), "Steel Blue"
+@map color 38 to (0, 191, 255), "Deep Sky Blue"
+@map color 39 to (135, 206, 235), "Sky Blue"
+@map color 40 to (176, 224, 230), "Powder Blue"
+@map color 41 to (0, 128, 0), "Green"
+@map color 42 to (0, 100, 0), "Dark Green"
+@map color 43 to (34, 139, 34), "Forest Green"
+@map color 44 to (46, 139, 87), "Sea Green"
+@map color 45 to (60, 179, 113), "Medium Sea Green"
+@map color 46 to (50, 205, 50), "Lime Green"
+@map color 47 to (124, 252, 0), "Lawn Green"
+@map color 48 to (75, 0, 130), "Indigo"
+@map color 49 to (128, 0, 128), "Purple"
+@map color 50 to (139, 0, 139), "Dark Magneta"
+@map color 51 to (153, 50, 204), "Dark Orchid"
+@map color 52 to (148, 0, 211), "Dark Violet"
+@map color 53 to (138, 43, 226), "Blue Violet"
+@map color 54 to (238, 130, 238), "Violet"
+@map color 55 to (0, 128, 128), "Teal"
+@map color 56 to (64, 224, 208), "Turquoise"
+@map color 57 to (0, 255, 255), "Aqua"
+@map color 58 to (0, 255, 255), "Cyan"
+@map color 59 to (0, 0, 0), "black"
+@map color 60 to (71, 44, 122), "Purple"
+@map color 61 to (59, 81, 139), "Dark Blue"
+@map color 62 to (44, 113, 142), "LightBlue"
+@map color 63 to (33, 144, 141), "Blue Green"
+@map color 64 to (39, 173, 129), "Dark Green"
+@map color 65 to (92, 200, 99), "Light Green"
+@map color 66 to (170, 220, 50), "Lime Green"
+@map color 67 to (253, 231, 37), "Yellow"
+@reference date 0
+@date wrap off
+@date wrap year 1950
+@default linewidth 1.0
+@default linestyle 1
+@default color 59
+@default pattern 1
+@default font 4
+@default char size 1.000000
+@default symbol size 0.400000
+@default sformat "%.8g"
+@background color 0
+@page background fill on
+@timestamp off
+@timestamp 0.03, 0.03
+@timestamp color 59
+@timestamp rot 0
+@timestamp font 4
+@timestamp char size 1.000000
+@timestamp def "Sat Aug 29 13:32:46 2020"
+@r0 off
+@link r0 to g0
+@r0 type above
+@r0 linestyle 1
+@r0 linewidth 1.0
+@r0 color 59
+@r0 line 0, 0, 0, 0
+@r1 off
+@link r1 to g0
+@r1 type above
+@r1 linestyle 1
+@r1 linewidth 1.0
+@r1 color 59
+@r1 line 0, 0, 0, 0
+@r2 off
+@link r2 to g0
+@r2 type above
+@r2 linestyle 1
+@r2 linewidth 1.0
+@r2 color 59
+@r2 line 0, 0, 0, 0
+@r3 off
+@link r3 to g0
+@r3 type above
+@r3 linestyle 1
+@r3 linewidth 1.0
+@r3 color 59
+@r3 line 0, 0, 0, 0
+@r4 off
+@link r4 to g0
+@r4 type above
+@r4 linestyle 1
+@r4 linewidth 1.0
+@r4 color 59
+@r4 line 0, 0, 0, 0
+@g0 on
+@g0 hidden false
+@g0 type XY
+@g0 stacked false
+@g0 bar hgap 0.000000
+@g0 fixedpoint off
+@g0 fixedpoint type 0
+@g0 fixedpoint xy 0.000000, 0.000000
+@g0 fixedpoint format general general
+@g0 fixedpoint prec 6, 6
+@with g0
+@    world 0, 0, 225, 200
+@    stack world 0, 0, 0, 0
+@    znorm 1
+@    view 0.218750, 0.150391, 1.251953, 0.850000
+@    title ""
+@    title font 4
+@    title size 1.500000
+@    title color 59
+@    subtitle ""
+@    subtitle font 4
+@    subtitle size 1.000000
+@    subtitle color 59
+@    xaxes scale Normal
+@    yaxes scale Normal
+@    xaxes invert off
+@    yaxes invert off
+@    xaxis  on
+@    xaxis  type zero false
+@    xaxis  offset 0.000000 , 0.000000
+@    xaxis  bar on
+@    xaxis  bar color 59
+@    xaxis  bar linestyle 1
+@    xaxis  bar linewidth 1.0
+@    xaxis  label "Q-target updates"
+@    xaxis  label layout para
+@    xaxis  label place auto
+@    xaxis  label char size 2.000000
+@    xaxis  label font 4
+@    xaxis  label color 59
+@    xaxis  label place normal
+@    xaxis  tick on
+@    xaxis  tick major 50
+@    xaxis  tick minor ticks 1
+@    xaxis  tick default 6
+@    xaxis  tick place rounded true
+@    xaxis  tick out
+@    xaxis  tick major size 1.000000
+@    xaxis  tick major color 59
+@    xaxis  tick major linewidth 1.0
+@    xaxis  tick major linestyle 1
+@    xaxis  tick major grid off
+@    xaxis  tick minor color 59
+@    xaxis  tick minor linewidth 1.0
+@    xaxis  tick minor linestyle 1
+@    xaxis  tick minor grid off
+@    xaxis  tick minor size 0.500000
+@    xaxis  ticklabel on
+@    xaxis  ticklabel format general
+@    xaxis  ticklabel prec 5
+@    xaxis  ticklabel formula ""
+@    xaxis  ticklabel append ""
+@    xaxis  ticklabel prepend ""
+@    xaxis  ticklabel angle 0
+@    xaxis  ticklabel skip 0
+@    xaxis  ticklabel stagger 0
+@    xaxis  ticklabel place normal
+@    xaxis  ticklabel offset auto
+@    xaxis  ticklabel offset 0.000000 , 0.010000
+@    xaxis  ticklabel start type auto
+@    xaxis  ticklabel start 0.000000
+@    xaxis  ticklabel stop type auto
+@    xaxis  ticklabel stop 0.000000
+@    xaxis  ticklabel char size 2.000000
+@    xaxis  ticklabel font 4
+@    xaxis  ticklabel color 59
+@    xaxis  tick place both
+@    xaxis  tick spec type none
+@    yaxis  on
+@    yaxis  type zero false
+@    yaxis  offset 0.000000 , 0.000000
+@    yaxis  bar on
+@    yaxis  bar color 59
+@    yaxis  bar linestyle 1
+@    yaxis  bar linewidth 1.0
+@    yaxis  label "performance"
+@    yaxis  label layout para
+@    yaxis  label place spec
+@    yaxis  label place 0.000000, 0.170000
+@    yaxis  label char size 2.000000
+@    yaxis  label font 4
+@    yaxis  label color 59
+@    yaxis  label place normal
+@    yaxis  tick on
+@    yaxis  tick major 50
+@    yaxis  tick minor ticks 1
+@    yaxis  tick default 6
+@    yaxis  tick place rounded true
+@    yaxis  tick out
+@    yaxis  tick major size 1.000000
+@    yaxis  tick major color 59
+@    yaxis  tick major linewidth 1.0
+@    yaxis  tick major linestyle 1
+@    yaxis  tick major grid off
+@    yaxis  tick minor color 59
+@    yaxis  tick minor linewidth 1.0
+@    yaxis  tick minor linestyle 1
+@    yaxis  tick minor grid off
+@    yaxis  tick minor size 0.500000
+@    yaxis  ticklabel on
+@    yaxis  ticklabel format general
+@    yaxis  ticklabel prec 5
+@    yaxis  ticklabel formula ""
+@    yaxis  ticklabel append ""
+@    yaxis  ticklabel prepend ""
+@    yaxis  ticklabel angle 0
+@    yaxis  ticklabel skip 0
+@    yaxis  ticklabel stagger 0
+@    yaxis  ticklabel place normal
+@    yaxis  ticklabel offset auto
+@    yaxis  ticklabel offset 0.000000 , 0.010000
+@    yaxis  ticklabel start type auto
+@    yaxis  ticklabel start 0.000000
+@    yaxis  ticklabel stop type auto
+@    yaxis  ticklabel stop 0.000000
+@    yaxis  ticklabel char size 2.000000
+@    yaxis  ticklabel font 4
+@    yaxis  ticklabel color 59
+@    yaxis  tick place both
+@    yaxis  tick spec type none
+@    altxaxis  off
+@    altyaxis  off
+@    legend on
+@    legend loctype view
+@    legend 0.9, 0.27
+@    legend box color 59
+@    legend box pattern 1
+@    legend box linewidth 1.0
+@    legend box linestyle 1
+@    legend box fill color 0
+@    legend box fill pattern 1
+@    legend font 4
+@    legend char size 1.000000
+@    legend color 59
+@    legend length 4
+@    legend vgap 1
+@    legend hgap 1
+@    legend invert false
+@    frame type 0
+@    frame linestyle 1
+@    frame linewidth 1.0
+@    frame color 59
+@    frame pattern 1
+@    frame background color 0
+@    frame background pattern 0
+@    s4 hidden false
+@    s4 type xy
+@    s4 symbol 1
+@    s4 symbol size 0.900000
+@    s4 symbol color 4
+@    s4 symbol pattern 1
+@    s4 symbol fill color 4
+@    s4 symbol fill pattern 1
+@    s4 symbol linewidth 1.0
+@    s4 symbol linestyle 1
+@    s4 symbol char 65
+@    s4 symbol char font 4
+@    s4 symbol skip 0
+@    s4 line type 0
+@    s4 line linestyle 1
+@    s4 line linewidth 1.0
+@    s4 line color 25
+@    s4 line pattern 1
+@    s4 baseline type 0
+@    s4 baseline off
+@    s4 dropline off
+@    s4 fill type 0
+@    s4 fill rule 0
+@    s4 fill color 59
+@    s4 fill pattern 1
+@    s4 avalue off
+@    s4 avalue type 2
+@    s4 avalue char size 1.000000
+@    s4 avalue font 4
+@    s4 avalue color 59
+@    s4 avalue rot 0
+@    s4 avalue format general
+@    s4 avalue prec 3
+@    s4 avalue prepend ""
+@    s4 avalue append ""
+@    s4 avalue offset 0.000000 , 0.000000
+@    s4 errorbar on
+@    s4 errorbar place both
+@    s4 errorbar color 4
+@    s4 errorbar pattern 1
+@    s4 errorbar size 1.000000
+@    s4 errorbar linewidth 1.0
+@    s4 errorbar linestyle 1
+@    s4 errorbar riser linewidth 1.0
+@    s4 errorbar riser linestyle 1
+@    s4 errorbar riser clip off
+@    s4 errorbar riser clip length 0.100000
+@    s4 comment "/home/nima/workspace/codes/learning-stories/RL/cart-pole-DDQN-finally-working-bringing-back-queue/performance-and-animations/steps_vs_iteration.dat"
+@    s4 legend  ""
+@target G0.S4
+@type xy
+0 18.4
+1 27.8
+2 22.2
+3 14.8
+4 16
+5 23.2
+6 26.8
+7 20.4
+8 20
+9 20
+10 17.8
+11 30.8
+12 24.2
+13 23.2
+14 17.2
+15 19.6
+16 17.2
+17 19.2
+18 24.8
+19 15.2
+20 14.6
+21 24.8
+22 19.2
+23 20.4
+24 16
+25 20.6
+26 14.8
+27 13.2
+28 18.6
+29 19.4
+30 19.4
+31 16.2
+32 17
+33 16.4
+34 19.4
+35 21.4
+36 15.6
+37 15.8
+38 12
+39 14.6
+40 17.2
+41 18.8
+42 11.6
+43 21
+44 23
+45 15.2
+46 17.2
+47 16.8
+48 16
+49 19.6
+50 20
+51 26.4
+52 19.8
+53 16.8
+54 22.8
+55 25.2
+56 23.6
+57 21.2
+58 28.2
+59 16.2
+60 21.6
+61 20
+62 18.8
+63 21.4
+64 25.6
+65 14.6
+66 15
+67 15.8
+68 25
+69 28.4
+70 27.2
+71 14.4
+72 26.8
+73 17.4
+74 18.6
+75 22.2
+76 33.8
+77 24
+78 22.8
+79 27.8
+80 23
+81 24.8
+82 24.2
+83 18.8
+84 13.8
+85 31.2
+86 39
+87 25.2
+88 15.4
+89 19.4
+90 23
+91 25.6
+92 13.6
+93 18.8
+94 34
+95 24.2
+96 19.4
+97 31.2
+98 17.4
+99 15.4
+100 14.4
+101 24
+102 24.4
+103 20
+104 29.4
+105 23
+106 18.6
+107 26.6
+108 22.2
+109 17.4
+110 22.6
+111 29.8
+112 31.8
+113 21.2
+114 31.2
+115 61.4
+116 25.2
+117 24.6
+118 30.2
+119 32.8
+120 30.2
+121 17
+122 28.2
+123 20
+124 22.2
+125 35.2
+126 27.6
+127 35.8
+128 23.4
+129 27.8
+130 31.8
+131 34.4
+132 27
+133 17.4
+134 23.4
+135 22
+136 33
+137 29
+138 38.8
+139 21.2
+140 25.8
+141 31.8
+142 24.4
+143 36
+144 31.2
+145 24
+146 31
+147 28.4
+148 20.6
+149 25.2
+150 55
+151 37.4
+152 68
+153 34.6
+154 40.4
+155 34.2
+156 28.2
+157 20.6
+158 44
+159 52.4
+160 36.6
+161 37.2
+162 48.4
+163 47.8
+164 41.2
+165 43.6
+166 36.8
+167 85.8
+168 70.8
+169 98.6
+170 82.8
+171 97.6
+172 99.2
+173 141.2
+174 89.6
+175 124.8
+176 148
+177 72.6
+178 160.4
+179 143.2
+180 174
+181 153.2
+182 164
+183 124
+184 110.8
+185 128
+186 179.4
+187 175.2
+188 173.8
+189 184.8
+190 200
+191 200
+192 200
+193 195
+194 200
+195 200
+196 200
+197 200
+198 200
+199 200
+200 200
+201 200
+202 200
+203 200
+204 200
+205 200
+206 200
+207 200
+208 200
+209 197.6
+210 200
+211 200
+212 200
+213 200
+214 200
+215 200
+216 200
+217 200
+218 200
+219 200
+220 195.8
+&
