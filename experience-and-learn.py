@@ -35,9 +35,10 @@ agent_ler.update_Q_t_to_Q()
 
 replay_buffer = initial_filling_of_buffer(rounds_data_exploration, agent_ler, replay_buffer, env, epsilon=5.0)
 
-K = 5
-N = 2
-U = 300
+U = 300 # Number of updates for Q-target
+N = 2 # number of episodes added to the replay buffer per update of Q-target
+K = 5 # number of updates epochs of learning for Q per added episode
+
 
 
 training_log = np.array([])

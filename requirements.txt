@@ -1,6 +1,7 @@
+gym==0.17.2
 keras
 numpy
-os
-random
-seaborn
-tensorflow
+random2
+tensorflow==2.2.0
+sys-os
+Pillow
