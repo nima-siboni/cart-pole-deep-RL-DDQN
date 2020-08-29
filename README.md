@@ -53,7 +53,7 @@ The maximum performance is limited to 200 steps as this is set by the cart-pole 
 
 ### In presence of random perturbations
 
-We also test the agent in presence of random perturbations. Here, we add "wind" which is blowing randomly and leads to a change the angle of the pole. An instance of such an experiment is presented here. One can observe that although the agent is trained in absence of the wind, it still performs reasonably well for in presence of the wind.
+We also test the agent in presence of random perturbations. Here, we add "wind" which is blowing randomly and leads to a change the angle of the pole. An instance of such an experiment is presented here, where the color of the background changes as the wind blows. One can observe that although the agent is trained in absence of the wind, it still performs reasonably well for in presence of the wind.
 
 <img src="./performance-and-animations/animations/trained-windy/animation.gif" width="60%">
 
