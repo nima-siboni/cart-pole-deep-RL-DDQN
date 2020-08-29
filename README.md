@@ -125,7 +125,8 @@ One should note that the events can come from any policy, as the DDQN is an off-
   **(4)** Finally, the policy with which the experiences are done is changed. After changing the policy, we repeat the whole process from the step **(1)**.
   
 The algorithm above is shown best by the following DQN sudo code:
-
+ <img src="./statics/DDQN.png" width="80%" /> 
+ 
 from the [Deep RL course](http://rail.eecs.berkeley.edu/deeprlcourse/) by S. Levin. 
 
 On changing the policy (step 4): In our implementation, this is done by assigning the learned Q-network to the Q-target network, and then using the Q value predictions of this network with epsilon greedy as the exploring policy. This is not a unique choice and one has the freedom of choosing any policy. This freedom is due to the off-policy nature of the DQN (and also DDQN). Nevertheless it might be a good idea to somehow involve the learned information into the policy.
