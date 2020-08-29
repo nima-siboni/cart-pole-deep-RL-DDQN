@@ -67,6 +67,8 @@ The main program is organized in the following way:
 * **filling up the replay buffer**: 
 
   The simulation is run with the initial random policy for a number of episodes, and the events of all episodes are saved in the the replay buffer. Each *event* is 
+  <img src="https://latex.codecogs.com/gif.latex?(s, a, r, s', done)" /> 
+
   
   Each episode is simulated in the following manner:
   
@@ -78,9 +80,22 @@ The main program is organized in the following way:
   
   **(4)** if the process is not ended, the new state is assigned to the variable *state* and the execution continues to step **(2)** . 
 
-This process is repeated for a number of episodes and all the data are gathered in an instance of the class *History*.
+This process is repeated for a number of episodes and all the data are gathered in an instance of the class *History*. 
 
-* **learning** : After sampling based on the policy, the obtained data is used to train the DNN. In the case of our DNN, defining the loss function is not straightforward. The reason behind this complication is the fact that this DNN has two types of outputs (classification for the action and regression for the value function) which are both affected by the weight and biases of the *same* shared layers. To train the weights/biases of these shared layers one should combine the binary cross entropy loss for the actions, and the mean squared error for the value function. One way to combine these different losses would be to consider a (weighted) average of them. Using this loss and the data gathered from the experience, we used the actor-critic algorithm to take a policy iteration step. Using this new policy, we go back to the **experience loops**.
+One should note that the events can come from any policy, as the DDQN is an off-policy method. Nevertheless, a policy which is highly exploratory is preferable as the agent benefits from learning from diverse experiences.
+
+* **learning** : After sampling based on the policy, the obtained data is used to train the DNNs. The train the agent, 
+
+  **(1)** first a random batch is taken from the replay buffer.
+  **(2)** using the events of the batch the Q-net is trained to fit the Q-values estiamted by the Q-target network (this is DQN, and in DDQN there is a small change here, which is introduced to decrease the overestimation of the Q-values). After finishing this step, the algorithms loops back to the step **(1)**. This procedure conitnues for a fixed number times.
+  **(3)** After looping over **(1)** and **(2)**, we go back and collect one more episode and add it to the buffer. If the replay buffer has reached its maximum size, some of the old events are deleted (based on first in, first out) and the new events are included. This step is repeated a number of times, where for each time, a complete set of repeatition for steps **(1)** and **(2)** are carried out.
+  **(4)** Finally, the policy with which the experiences are done is changed. After changing the policy, we repeat the whole process from the step **(1)**.
+  
+The algorithm above is shown best by the following DQN sudo code:
+
+from the [Deep RL course](http://rail.eecs.berkeley.edu/deeprlcourse/) by S. Levin. 
+
+On changing the policy (step 4): In our implementation, this is done by assiging the learned Q-network to the Q-target network, and then using the Q value predictions of this network with epsilon greedy as the exploring policy. This is not a unique choice and one has the freedom of choosing any policy. This freedom is due to the off-policy nature of the DQN (and also DDQN). Nevertheless it might be a good idea to somehow involve the learned information into the policy.
 
 ## requirements
 Besides the python3 and pip3
@@ -112,32 +127,6 @@ python3 simulator.py
 
 To choose which agent is used one should change the file address of the model.
 
-
-## tips and tricks
-
-The aforementioned oscillations can be reduced significantly by introducing a small degree of exploration to the problem. One way to do so is using Boltzmann exploration (see [here](https://arxiv.org/abs/1705.10257) for details). A simpler approach which we considered here is similar to epsilon-greedy method:
-
-
 <img src="https://latex.codecogs.com/gif.latex?\mathrm{output\_policy}=\frac{\mathrm{output\_policy}+\epsilon}{1+\epsilon~~\mathrm{nr\_actions}}" /> 
 
 where *output_policy* is the output of the DNN for the policy which has *nr_actions* elements (see the schematics of the DNN). This additional operation (with no learnable parameter) changes the design of the DNN as depicted below.
-
-
-<img src="./statics/with-epsilon-layer.png" width="30%">
-
-Of course, now one should choose a value for the epsilon in a proper range: on one hand, we observed that if the epsilon is too small, it does not have the desired stabilizing effect, and on the other hand, if it is too large, the overall performance of the agent is hindered. The value of epsilon is 0.001 for the results shown above. To observe the qualitative effect of introducing the epsilon, here the same performance curve is plotted for epsilon=0. One can see that the presence of the epsilon increases the overall performance of the agent and its learning process.
-
-
-<img src="./performance-and-animations/results_zero_epsilon.png" width="60%">
-
-Detailed quantitative and analytical studies of the effect of epsilon is required.
-
-
-## discussions
-
-Using the actor-critic method, the agent can directly learn from their experience. As one can see in the above figure, after only ~10 policy iteration the agent figures out the right policy. One can stop the training at this point. Nevertheless, if one chooses to continue training, surprisingly the agent starts showing an unstable behavior, i.e. the performance oscillates. This is a known fact and in the following a few steps towards reduction of these oscillations are discussed. 
-
-
-## Future steps
-
-* The sampling from each policy is a task which can be parallelized conveniently, as the episodes are independent of each other.
