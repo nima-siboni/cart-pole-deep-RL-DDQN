@@ -118,13 +118,18 @@ One should note that the events can come from any policy, as the DDQN is an off-
 
   **(1)** first a random batch is taken from the replay buffer.
   
+  
   **(2)** using the events of the batch the Q-net is trained to fit the Q-values estimated by the Q-target network (this is DQN, and in DDQN there is a small change here, which is introduced to decrease the overestimation of the Q-values). After finishing this step, the algorithm loops back to the step **(1)**. This procedure continues for a fixed number times.
   
+  
   **(3)** After looping over **(1)** and **(2)**, we go back and collect one more episode and add it to the buffer. If the replay buffer has reached its maximum size, some of the old events are deleted (based on first in, first out) and the new events are included. This step is repeated a number of times, where for each time, a complete set of repetition for steps **(1)** and **(2)** are carried out.
   
+  
   **(4)** Finally, the policy with which the experiences are done is changed. After changing the policy, we repeat the whole process from the step **(1)**.
   
+  
 The algorithm above is shown best by the following DQN sudo code:
+ 
  <img src="./statics/DDQN.png" width="80%" /> 
  
 from the [Deep RL course](http://rail.eecs.berkeley.edu/deeprlcourse/) by S. Levin. 
