@@ -66,10 +66,12 @@ The main program is organized in the following way:
 
 * **filling up the replay buffer**: 
 
-  The simulation is run with the initial random policy for a number of episodes, and the events of all episodes are saved in the the replay buffer. Each *event* is 
+  The simulation is run with the initial random policy for a number of episodes, and the events of all episodes are saved in the the replay buffer. Each *event* is a tuple of 
+  
   <img src="https://latex.codecogs.com/gif.latex?(s,~a,~r~,~s',~done)" /> 
 
-  
+  where *s* is the current state, *a* is the taken action, *r* is the obtained reward for *(s, a)*, *s'* is the state after taking the action, and *done* indicates whether the end of the episode is reached or not.
+  
   Each episode is simulated in the following manner:
   
   **(1)** a random initial state is assigned to the *state* variable,
@@ -87,8 +89,11 @@ One should note that the events can come from any policy, as the DDQN is an off-
 * **learning** : After sampling based on the policy, the obtained data is used to train the DNNs. The train the agent, 
 
   **(1)** first a random batch is taken from the replay buffer.
+  
   **(2)** using the events of the batch the Q-net is trained to fit the Q-values estiamted by the Q-target network (this is DQN, and in DDQN there is a small change here, which is introduced to decrease the overestimation of the Q-values). After finishing this step, the algorithms loops back to the step **(1)**. This procedure conitnues for a fixed number times.
+  
   **(3)** After looping over **(1)** and **(2)**, we go back and collect one more episode and add it to the buffer. If the replay buffer has reached its maximum size, some of the old events are deleted (based on first in, first out) and the new events are included. This step is repeated a number of times, where for each time, a complete set of repeatition for steps **(1)** and **(2)** are carried out.
+  
   **(4)** Finally, the policy with which the experiences are done is changed. After changing the policy, we repeat the whole process from the step **(1)**.
   
 The algorithm above is shown best by the following DQN sudo code:
