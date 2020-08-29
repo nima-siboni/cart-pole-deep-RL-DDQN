@@ -67,7 +67,7 @@ The main program is organized in the following way:
 * **filling up the replay buffer**: 
 
   The simulation is run with the initial random policy for a number of episodes, and the events of all episodes are saved in the the replay buffer. Each *event* is 
-  <img src="https://latex.codecogs.com/gif.latex?(s, a, r, s', done)" /> 
+  <img src="https://latex.codecogs.com/gif.latex?(s,~a,~r~,~s',~done)" /> 
 
   
   Each episode is simulated in the following manner:
