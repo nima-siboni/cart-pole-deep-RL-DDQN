@@ -33,6 +33,12 @@ Here, the DNNs are designed such that they accept a state-action pair and output
 
 ## Results
 
+Here, before getting into the details of training of the agents, the performance of the trained agent is shown. 
+
+First, we show a full episode of the agent's behavior, in the environment in which it is trained (i.e. where there is no random perturbations from the ambient). This is for an agent which has reached the maximum performance. We also show quantitatively how the performance is improved as the number of training rounds increases.
+
+Next, we put the agent in a more realistic environment, e.g. where there is a random noise acting on the agent. How well an agent does in an environment which is not its training environment is an important question for real world applications of the RL.
+
 ### In absence of random perturbations
 Let's first start with a visual demonstration of an episode of a trained agent, as shown here. One can qualitatively see the improvement of the agent in stabilizing the pole.
 
