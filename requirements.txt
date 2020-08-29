@@ -3,5 +3,6 @@ keras
 numpy
 random2
 tensorflow==2.2.0
-sys-os
 Pillow
+os-sys
+
