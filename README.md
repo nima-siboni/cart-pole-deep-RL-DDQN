@@ -1,6 +1,6 @@
 # cart-pole-deep-RL-DDQN
 
-After implementing [REINFORCE](https://github.com/nima-siboni/simplest-world-REINFORCE) and [Actor-Crtitic](https://github.com/nima-siboni/cart-pole-deep-RL-actor-critic), it is finally time for Double DQN (DDQN)! A great advantage of DDQN over the previously implementations of the actor-critic and the reinforce is that DDQN is off-policy, unlike those two which are on-policy.
+After implementing [REINFORCE](https://github.com/nima-siboni/simplest-world-REINFORCE) and [Actor-Crtitic](https://github.com/nima-siboni/cart-pole-deep-RL-actor-critic), it is finally time for Double DQN (DDQN)! A great advantage of DDQN over the previous implementations of the actor-critic and the reinforce is that DDQN is off-policy, unlike those two which are on-policy.
 
 ## The problem
 
@@ -53,7 +53,7 @@ The maximum performance is limited to 200 steps as this is set by the cart-pole 
 
 ### In presence of random perturbations
 
-We also test the agent in presence of random perturbations. Here, we add "wind" which is blowing randomly and leads to a change the angle of the pole. An instance of such an experiment is presented here, where the color of the background changes as the wind blows. One can observe that although the agent is trained in absence of the wind, it still performs reasonably well for in presence of the wind.
+We also test the agent in presence of random perturbations. Here, we add "wind" which is blowing randomly and leads to a change in the angle of the pole. An instance of such an experiment is presented here, where the color of the background changes as the wind blows. One can observe that although the agent is trained in absence of the wind, it still performs reasonably well in the presence of the wind.
 
 <img src="./performance-and-animations/animations/trained-windy/animation.gif" width="60%">
 
@@ -94,20 +94,20 @@ The main program is organized in the following way:
 
 * **filling up the replay buffer**: 
 
-  The simulation is run with the initial random policy for a number of episodes, and the events of all episodes are saved in the the replay buffer. Each *event* is a tuple of 
-  
-  <img src="https://latex.codecogs.com/gif.latex?(s,~a,~r~,~s',~done)" /> 
+  The simulation is run with the initial random policy for a number of episodes, and the events of all episodes are saved in the replay buffer. Each *event* is a tuple of 
+  
+  <img src="https://latex.codecogs.com/gif.latex?(s,~a,~r~,~s',~done)" /> 
 
   where *s* is the current state, *a* is the taken action, *r* is the obtained reward for *(s, a)*, *s'* is the state after taking the action, and *done* indicates whether the end of the episode is reached or not.
-  
-  Each episode is simulated in the following manner:
-  
-  **(1)** a random initial state is assigned to the *state* variable,
+  
+  Each episode is simulated in the following manner:
+  
+  **(1)** a random initial state is assigned to the *state* variable,
 
   **(2)** given the *state*, an action (*a*) is chosen using the policy,
 
   **(3)** the action *a* is given to the environment, and the environment returns the new state, the reward, and a signal indicating the end of the episode.
-  
+  
   **(4)** if the process is not ended, the new state is assigned to the variable *state* and the execution continues to step **(2)** . 
 
 This process is repeated for a number of episodes and all the data are gathered in an instance of the class *History*. 
@@ -116,17 +116,16 @@ One should note that the events can come from any policy, as the DDQN is an off-
 
 * **learning** : After sampling based on the policy, the obtained data is used to train the DNNs. The train the agent, 
 
-  **(1)** first a random batch is taken from the replay buffer.
-  
-  **(2)** using the events of the batch the Q-net is trained to fit the Q-values estiamted by the Q-target network (this is DQN, and in DDQN there is a small change here, which is introduced to decrease the overestimation of the Q-values). After finishing this step, the algorithms loops back to the step **(1)**. This procedure conitnues for a fixed number times.
-  
-  **(3)** After looping over **(1)** and **(2)**, we go back and collect one more episode and add it to the buffer. If the replay buffer has reached its maximum size, some of the old events are deleted (based on first in, first out) and the new events are included. This step is repeated a number of times, where for each time, a complete set of repeatition for steps **(1)** and **(2)** are carried out.
-  
-  **(4)** Finally, the policy with which the experiences are done is changed. After changing the policy, we repeat the whole process from the step **(1)**.
-  
+  **(1)** first a random batch is taken from the replay buffer.
+  
+  **(2)** using the events of the batch the Q-net is trained to fit the Q-values estimated by the Q-target network (this is DQN, and in DDQN there is a small change here, which is introduced to decrease the overestimation of the Q-values). After finishing this step, the algorithm loops back to the step **(1)**. This procedure continues for a fixed number times.
+  
+  **(3)** After looping over **(1)** and **(2)**, we go back and collect one more episode and add it to the buffer. If the replay buffer has reached its maximum size, some of the old events are deleted (based on first in, first out) and the new events are included. This step is repeated a number of times, where for each time, a complete set of repetition for steps **(1)** and **(2)** are carried out.
+  
+  **(4)** Finally, the policy with which the experiences are done is changed. After changing the policy, we repeat the whole process from the step **(1)**.
+  
 The algorithm above is shown best by the following DQN sudo code:
 
 from the [Deep RL course](http://rail.eecs.berkeley.edu/deeprlcourse/) by S. Levin. 
 
-On changing the policy (step 4): In our implementation, this is done by assiging the learned Q-network to the Q-target network, and then using the Q value predictions of this network with epsilon greedy as the exploring policy. This is not a unique choice and one has the freedom of choosing any policy. This freedom is due to the off-policy nature of the DQN (and also DDQN). Nevertheless it might be a good idea to somehow involve the learned information into the policy.
-
+On changing the policy (step 4): In our implementation, this is done by assigning the learned Q-network to the Q-target network, and then using the Q value predictions of this network with epsilon greedy as the exploring policy. This is not a unique choice and one has the freedom of choosing any policy. This freedom is due to the off-policy nature of the DQN (and also DDQN). Nevertheless it might be a good idea to somehow involve the learned information into the policy.
